@@ -71,27 +71,24 @@ class MyTrades extends React.Component {
             else {
                 if (this.state.user.requests_accepted.length !== 0) {
                     requests_accepted = this.state.user.requests_accepted.map(function(request, index) {
-                        return  <div key={index}>
+                        return  <div className="request-single" key={index}>
                                     <img src={request.image} alt={request.title}></img>
-                                    <div className="request-info">
-                                        <p><strong>Title: </strong> {request.title} </p>
-                                        <p><strong>Owner: </strong> {request.owner} </p>
+                                    <div className="requests-buttons">
+                                        <button className="btn btn-danger" onClick={() => {this.removeAcceptedRequest(request)}}>Remove</button>
                                     </div>
-                                    <button className="btn btn-danger" onClick={() => {this.removeAcceptedRequest(request)}}>Remove</button>
                                 </div>;
                     }.bind(this));
                     accepted =  <div id="requests-accepted">
-                                    <h4>Accepted: </h4>
-                                    {requests_accepted}
+                                    <h3>Accepted: </h3>
+                                    <div className="requests">
+                                        {requests_accepted}
+                                    </div>
+                                    <hr></hr>
                                 </div>;
                 }
                 if (this.state.user.requests_received.length !== 0) {
                     requests_received = this.state.user.requests_received.map(function(request, index) {
-                        return  <div key={index}>
-                                    <div className="request-info">
-                                        <p><strong>Title: </strong> {request.book.title} </p>
-                                        <p><strong>Sender: </strong> {request.user} </p>
-                                    </div>
+                        return  <div className="request-single" key={index}>
                                     <img src={request.book.image} alt={request.book.title}></img>
                                     <div className="request-buttons">
                                         <button className="btn btn-success" onClick={() => {this.acceptRequest(request)}}>Accept</button>
@@ -100,13 +97,16 @@ class MyTrades extends React.Component {
                                 </div>;
                     }.bind(this));
                     received =  <div id="requests-received">
-                                    <h4>Received requests: </h4>
-                                    {requests_received}
+                                    <h3>Received requests: </h3>
+                                    <div className="requests">
+                                        {requests_received}
+                                    </div>
+                                    <hr></hr>
                                 </div>;
                 }
                 if (this.state.user.requests_sent.length !== 0) {
                     requests_sent = this.state.user.requests_sent.map(function(request, index) {
-                        return  <div key={index}>
+                        return  <div className="request-single" key={index}>
                                     <img src={request.image} alt={request.title}></img>
                                     <div id="cancel-button">
                                         <button className="btn btn-danger" onClick={() => {this.cancelTrade(request)}}>Cancel</button>
@@ -114,8 +114,10 @@ class MyTrades extends React.Component {
                                 </div>;
                     }.bind(this));
                     sent =  <div id="requests-sent">
-                                    <h4>Pending trades: </h4>
-                                    {requests_sent}
+                                    <h3>Pending trades: </h3>
+                                    <div className="requests">
+                                        {requests_sent}
+                                    </div>
                                 </div>;
                 }
             }

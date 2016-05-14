@@ -5,7 +5,6 @@ class Profile extends React.Component {
     constructor(props) {
         super(props);
         this.state = { user: undefined, fullName: "", city: "", state: "" };
-        this.logout = this.logout.bind(this);
         this.handleFullName = this.handleFullName.bind(this);
         this.handleCity = this.handleCity.bind(this);
         this.handleState = this.handleState.bind(this);
@@ -15,11 +14,6 @@ class Profile extends React.Component {
 
     componentDidMount() {
         this.setState({ user: this.props.route.user });
-    }
-
-    logout() {
-        sessionStorage.removeItem("_book_token");
-        window.location.href = window.location.href + "/";
     }
 
     handleFullName(e) {
@@ -89,12 +83,11 @@ class Profile extends React.Component {
                         <input name="city" type="text" value={this.state.city} onChange={this.handleCity}></input>
                         <label for="state">State</label>
                         <input name="state" type="text" value={this.state.state} onChange={this.handleState}></input>
-                        <button className="btn btn-success" onClick={this.handleSubmit}>Submit</button>
-                        <button className="btn btn-danger" onClick={this.resetProfile}>Reset Profile</button>
+                        <div id="profile-buttons">
+                            <button className="btn btn-success" onClick={this.handleSubmit}>Submit</button>
+                            <button className="btn btn-danger" onClick={this.resetProfile}>Reset Profile</button>
+                        </div>
                     </form>
-                </div>
-                <div id="logout">
-                    <button className="btn btn-danger" onClick={this.logout}>Logout</button>
                 </div>
             </div>
         );

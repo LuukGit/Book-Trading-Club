@@ -60,9 +60,9 @@ class MyBooks extends React.Component {
             return(
                 <div id="my-books">
                     <form>
-                        <label for="title">Title</label>
+                        <label for="title">Add Book </label>
                         <input type="text" placeholder="Enter title..." name="title" value={this.state.title} onChange={this.handleTitle}></input>
-                        <button className="btn btn-success" onClick={this.getBook}>Submit</button>
+                        <button className="btn btn-success" onClick={this.getBook}><span>Submit</span></button>
                     </form>
                     <hr></hr>
                     {books}

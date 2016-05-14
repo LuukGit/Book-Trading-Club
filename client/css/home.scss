@@ -1,17 +1,156 @@
+$headerFontSize: 30px;
+$top-margin: 20px;
+
 body {
     height: 100%;
     width: 100%;
+    background-color: #444;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+#myNav {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: black;
+
+    h3 {
+      font-size: $headerFontSize;
+    }
+
+    .navbar-li {
+      width: 120px;
+      height: 63px;
+      text-align: center;
+    }
+
+    .navbar-li:hover {
+      background-color: #ddd;
+    }
+
+    a {
+      line-height: $headerFontSize;
+      font-size: 18px;
+    }
+
+    .menu-item {
+        a {
+            width: 100%;
+            font-size: 14px;
+        }
+    }
 }
 
 #content {
+    hr {
+        width: 80%;
+        height: 1px;
+        background-color: #444;
+    }
+    h3, h4 {
+        font-weight: bold;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    min-height: 600px;
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    margin: 0 auto;
+    border: 1px solid black;
+    box-shadow: 0 0 2px black;
     img {
         margin-bottom: 10px;
+    }
+
+    label {
+        display: block;
+        font-size: 20px;
+    }
+    input[type=text] {
+        width: 300px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 17px;
+        border: 1px solid #444;
     }
 }
 
 #login {
+    margin-top: $top-margin;
+    text-align: center;
     #span-warning {
         color: red;
+    }
+    h4 {
+        font-size: 20px;
+    }
+    input {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    button {
+        margin-right: 25px;
+        width: 90px;
+    }
+}
+
+#profile {
+    form {
+        width: 340px;
+        padding: 20px;
+        box-shadow: 0 0 3px #444;
+        border-radius: 10px;
+        margin: 0 auto;
+    }
+    margin-top: $top-margin*2;
+    #update-profile {
+        label {
+            text-align: left;
+        }
+        input {
+            margin-bottom: 20px;
+        }
+        #profile-buttons {
+            text-align: center;
+            margin-top: 20px;
+            button {
+                margin-right: 20px;
+                width: 110px;
+            }
+        }
+    }
+}
+
+#my-books {
+    margin-top: $top-margin;
+    form {
+        text-align: center;
+    }
+    label {
+        font-weight: bold;
+        font-size: 25px;
+        text-align: center;
+    }
+    button {
+        span {
+            vertical-align: middle;
+        }
+        font-size: 15px;
+        height: 35px;
+        margin-left: 10px;
     }
 }
 
@@ -23,8 +162,12 @@ body {
     padding: 20px;
 
     img {
-        margin: auto;
+        margin: 0 auto;
     }
+}
+
+.book:hover {
+    box-shadow: 0 0 5px black;
 }
 
 .span-key {
@@ -33,8 +176,39 @@ body {
     font-weight: bold;
 }
 
-#all-books {
-    .book:hover {
-        box-shadow: 0 0 5px black;
+#my-trades {
+    margin-top: $top-margin;
+    #empty-trade {
+        text-align: center;
+        margin-top: 25px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .requests {
+        margin-bottom: 15px;
+        width: 80%;
+        margin: 0 auto;
+        min-height: 300px;
+        .request-single {
+            text-align: center;
+            display: inline-block;
+            max-width: 200px;
+            max-height: 300px;
+            padding: 20px;
+            margin-right: 20px;
+
+            img {
+                margin: 0 auto;
+            }
+
+            .btn {
+                margin-right: 10px;
+                width: 70px;
+            }
+        }
+        .request-single:hover {
+            box-shadow: 0 0 5px #444;
+        }
     }
 }

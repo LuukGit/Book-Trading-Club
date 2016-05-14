@@ -88,7 +88,7 @@ class Book extends React.Component {
 
         return(
             <div className="book">
-                <input type="image" src={this.props.book.image} placeholder={this.props.book.title} onClick={this.openModal}></input>
+                <input type="image" src={this.props.book.image} alt={this.props.book.title} onClick={this.openModal}></input>
                 <Modal show={this.state.showModal} onHide={this.closeModal}>
                   <Modal.Header closeButton>
                     <Modal.Title>{this.props.book.title}</Modal.Title>

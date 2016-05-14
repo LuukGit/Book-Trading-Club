@@ -31,7 +31,8 @@ class AllBooks extends React.Component {
             }.bind(this));
             return(
                 <div id="all-books">
-                    <h4> List of all books: </h4>
+                    <h3> Available Books </h3>
+                    <hr></hr>
                     {books}
                 </div>
             );
