@@ -1,0 +1,28 @@
+body {
+  height: 100%;
+  width: 100%; }
+
+#content img {
+  margin-bottom: 10px; }
+
+#login #span-warning {
+  color: red; }
+
+.book {
+  text-align: center;
+  display: inline-block;
+  max-width: 175px;
+  max-height: 300px;
+  padding: 20px; }
+  .book img {
+    margin: auto; }
+
+.span-key {
+  float: left;
+  width: 100px;
+  font-weight: bold; }
+
+#all-books .book:hover {
+  box-shadow: 0 0 5px black; }
+
+/*# sourceMappingURL=home.css.map */
