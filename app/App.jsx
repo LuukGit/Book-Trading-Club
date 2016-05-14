@@ -40,7 +40,7 @@ class App extends React.Component {
 
     setUser(user) {
         sessionStorage.setItem("_book_token", user.token);
-        window.location.href = "http://localhost:8080/allbooks";
+        window.location.href = "https://luuk-book-trading-club.herokuapp.com/allbooks";
     }
 
     updateUser(user) {
