@@ -23,13 +23,13 @@ body {
   #myNav .navbar-li {
     width: 120px;
     height: 63px;
-    text-align: center;
-    color: black; }
+    text-align: center; }
   #myNav .navbar-li:hover {
     background-color: #ddd; }
   #myNav a {
     line-height: 30px;
-    font-size: 18px; }
+    font-size: 18px;
+    color: black; }
   #myNav .menu-item a {
     width: 100%;
     font-size: 14px; }

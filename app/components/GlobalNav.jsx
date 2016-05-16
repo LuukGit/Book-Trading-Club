@@ -15,7 +15,7 @@ class GlobalNav extends React.Component {
   }
 
   goToProfile() {
-      window.location.href = "https://luuk-book-trading-club.herokuapp.com/profile";
+      window.location.href = "http://127.0.0.1:8080/profile";
   }
 
   logout() {

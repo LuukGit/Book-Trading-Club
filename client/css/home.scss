@@ -32,7 +32,6 @@ body {
       width: 120px;
       height: 63px;
       text-align: center;
-      color: black;
     }
 
     .navbar-li:hover {
@@ -42,6 +41,8 @@ body {
     a {
       line-height: $headerFontSize;
       font-size: 18px;
+      color: black;
+
     }
 
     .menu-item {
