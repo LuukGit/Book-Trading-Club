@@ -59,10 +59,10 @@ class App extends React.Component {
             <Router history={browserHistory}>
               <Route path="/" component={Main} onUpdate={this.updateUser} user={this.state.user}>
                 <IndexRoute component={MyBooks} onEnter={this.requireLogin} user={this.state.user}/>
-                <Route path="/mybooks" onUpdate={this.updateUser} user={this.state.user} onEnter={this.requireLogin} component={MyBooks} user={this.state.user}/>
-                <Route path="/mytrades" user={this.state.user} onEnter={this.requireLogin} component={MyTrades} user={this.state.user}/>
-                <Route path="/allbooks" user={this.state.user} onEnter={this.requireLogin} component={AllBooks} user={this.state.user}/>
-                <Route path="/profile" user={this.state.user} onEnter={this.requireLogin} component={Profile} user={this.state.user}/>
+                <Route path="/mybooks" onUpdate={this.updateUser} user={this.state.user} onEnter={this.requireLogin} component={MyBooks} />
+                <Route path="/mytrades" user={this.state.user} onEnter={this.requireLogin} component={MyTrades} />
+                <Route path="/allbooks" user={this.state.user} onEnter={this.requireLogin} component={AllBooks} />
+                <Route path="/profile" user={this.state.user} onEnter={this.requireLogin} component={Profile} />
                 <Route path="/login" onLogin={this.setUser} component={Login} />
               </Route>
             </Router>

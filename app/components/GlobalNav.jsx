@@ -24,35 +24,45 @@ class GlobalNav extends React.Component {
   }
 
   render() {
-    var log = <li><Link to="/login"> Login </Link></li>;
     if (this.state.user) {
         var profileName = this.state.user.username.charAt(0).toUpperCase() + this.state.user.username.substr(1, this.state.user.username.length);
-        log =  <NavDropdown className="navbar-li" title={profileName} id="nav-dropdown">
-                  <MenuItem className="menu-item" onClick={this.goToProfile}>Settings</MenuItem>
-                  <MenuItem className="menu-item" onClick={this.logout}>Logout</MenuItem>
+        return (
+          <nav id="myNav" className="navbar navbar-default">
+            <div className="container-fluid">
+              <div className="navbar-header"> <h3 className="navbar-text">Book Trading App</h3> </div>
+              <ul className="nav navbar-nav navbar-right">
+                <li className="navbar-li">
+                  <Link to="/allbooks">All Books</Link>
+                </li>
+                <li className="navbar-li">
+                  <Link to="/mybooks">My Books</Link>
+                </li>
+                <li className="navbar-li">
+                  <Link to="/mytrades">My Trades</Link>
+                </li>
+                <NavDropdown className="navbar-li" title={profileName} id="nav-dropdown">
+                          <MenuItem className="menu-item" onClick={this.goToProfile}>Settings</MenuItem>
+                          <MenuItem className="menu-item" onClick={this.logout}>Logout</MenuItem>
                 </NavDropdown>
+              </ul>
+            </div>
+          </nav>
+        );
     }
-
-    return (
-      <nav id="myNav" className="navbar navbar-default">
-        <div className="container-fluid">
-          <div className="navbar-header"> <h3 className="navbar-text">Book Trading App</h3> </div>
-          <ul className="nav navbar-nav navbar-right">
-            <li className="navbar-li">
-              <Link to="/allbooks">All Books</Link>
-            </li>
-            <li className="navbar-li">
-              <Link to="/mybooks">My Books</Link>
-            </li>
-            <li className="navbar-li">
-              <Link to="/mytrades">My Trades</Link>
-            </li>
-            {log}
-          </ul>
-        </div>
-      </nav>
-    );
-  }
+    else {
+        return(
+            <nav id="myNav" className="navbar navbar-default">
+              <div className="container-fluid">
+                <div className="navbar-header"> <h3 className="navbar-text">Book Trading App</h3> </div>
+                <ul className="nav navbar-nav navbar-right">
+                  <li className="navbar-li">
+                      <Link to="/login"> Login </Link>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+        );
+    }
 }
 
 module.exports = GlobalNav;
