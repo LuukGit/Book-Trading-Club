@@ -25,12 +25,14 @@ body {
 
     h3 {
       font-size: $headerFontSize;
+      color: black;
     }
 
     .navbar-li {
       width: 120px;
       height: 63px;
       text-align: center;
+      color: black;
     }
 
     .navbar-li:hover {
